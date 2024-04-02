@@ -1,0 +1,28 @@
+.form{width: 550px;
+    border: 3px solid;
+border-radius: 20px;
+margin-left: 40px;
+padding: 10px;
+margin-bottom: 10px;}
+
+.formBox{display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding-top: 10px;}
+
+.text{ font-size: 20px;
+    margin-bottom: 10px;}
+
+    .input{height: 40px;
+        width: 100%;
+    font-size: 20px;
+    border: 3px solid;
+    border-radius: 5px;
+    }
+.formButton{margin-top: 10px;
+    height: 40px;
+    font-size: 15px;
+    padding: 10px;
+    align-items: center;}
+
+.error{color: red;}

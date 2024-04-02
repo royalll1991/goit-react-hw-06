@@ -1,0 +1,27 @@
+.box{border: 3px solid;
+    margin-bottom: 10px;
+    padding: 20px;
+    width: 550px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    }
+    
+    .userBox{display: flex;
+    justify-content: left;
+    align-items: center;
+    }
+    
+    .userImg{margin-right: 20px;
+    width: 3em;
+    height: 3em;
+    align-items: center;}
+    
+    .text{font-size: 30px;
+    }
+    
+    .buttonStyle{height: 60px;
+    font-size: 30px;
+    padding: 10px;
+    align-items: center;}
