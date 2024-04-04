@@ -1,24 +1,33 @@
-import { FaUser, FaPhone } from 'react-icons/fa';
-import css from './Contact.module.css'
-const Contact = ({ id, name, number, onDelete}) => {
-    const handleDelete = () => {
-      onDelete(id);
-    };
-    return (
-      <div className={css.box}>
-        <div className={css.buttonBox}>
-          <div className={css.userBox}>
-          <FaUser className={css.userImg}/>      
-        <p className={css.text}>{name}</p>
-        </div>
-        <div className={css.userBox}> 
-          <FaPhone className={css.userImg}/>      
-        <p className={css.text}>{number}</p>
-        </div>
-        </div>
-        <button className={css.buttonStyle} onClick={handleDelete}>Delete</button>
-      </div>
-    );
-  };
+import { FaPhone } from 'react-icons/fa6';
+import { IoPerson } from 'react-icons/io5';
+import css from './Contact.module.css';
+import { deleteContact } from '../../redux/contactsSlice';
+import { useDispatch } from 'react-redux';
 
-  export default Contact;
+const Contact = ({ id, name, number }) => {
+	const dispatch = useDispatch();
+	const handleRemoveClick = e => {
+		
+		dispatch(deleteContact(e.currentTarget.id));
+	};
+	return (
+		<>
+			<li id={id} className={css.box} onClick={handleRemoveClick}>
+				<div >
+					<p className={css.text}>
+						<IoPerson className={css.userImg} />
+						{name}
+					</p>
+					<p className={css.text}>
+						<FaPhone className={css.userImg} />
+						{number}
+					</p>
+				</div>
+				<button className={css.buttonStyle} type="button">
+					Delete
+				</button>
+			</li>
+		</>
+	);
+};
+export default Contact;
